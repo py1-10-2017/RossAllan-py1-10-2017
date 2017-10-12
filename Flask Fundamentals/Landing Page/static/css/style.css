@@ -1,0 +1,17 @@
+*{
+  margin:0;
+  padding: 0;
+}
+
+a{
+  font-size: 22pt;
+}
+
+ul{
+  margin-top: 30px;
+  text-align: center;
+}
+
+ h1,p,h2{
+   text-align: center;
+ }

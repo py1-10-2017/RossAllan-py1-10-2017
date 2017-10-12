@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {% with globals = get_flashed_messages(category_filter=["global"]) %}
+      {% if globals %}
+        {% for message in globals %}
+          <p class="error">{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form action="/process" method="post">
+      {% with name = get_flashed_messages(category_filter=["name"]) %}
+        {% if name %}
+          {% for message in name %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <p>First Name: </p><input type="text" name="fname"><br>
+      <p>Last Name: </p><input type="text" name="lname"><br>
+      {% with email = get_flashed_messages(category_filter=["email"]) %}
+        {% if email %}
+          {% for message in email %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <p>Email: </p><input type="text" name="email"><br>
+      {% with psswrd = get_flashed_messages(category_filter=["password"]) %}
+        {% if psswrd %}
+          {% for message in psswrd %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <p>Password: </p><input type="password" name="psw"><br>
+      <p>Confirm Password: </p><input type="password" name="cpsw"><br>
+      {% with birth = get_flashed_messages(category_filter=["birth"]) %}
+        {% if birth %}
+          {% for message in birth %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <p>Date of Birth: </p><input type="date" name="birth">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

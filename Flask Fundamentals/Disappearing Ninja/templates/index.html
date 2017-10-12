@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {% if color %}
+      {% if color == "blank" %}
+        <img src="{{url_for('static',filename='images/four.jpg')}}">
+      {% elif color == "blue" %}
+        <img src="{{url_for('static',filename='images/blue.jpg')}}">
+      {% elif color == "red" %}
+        <img src="{{url_for('static',filename='images/red.jpg')}}">
+      {% elif color == "orange" %}
+        <img src="{{url_for('static',filename='images/orange.jpg')}}">
+      {% elif color == "purple" %}
+        <img src="{{url_for('static',filename='images/purple.jpg')}}">
+      {% else %}
+        <img src="{{url_for('static',filename='images/april.jpg')}}">
+      {% endif %}
+    {% else %}
+      <h1>No Ninjas Here<h1>
+    {% endif %}
+  </body>
+</html>

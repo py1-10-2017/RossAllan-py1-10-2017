@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        if ("{{session['result']}}" == "low"){
+          $("#output").html("<h1>Too Low!</h1>")
+        }else if ("{{session['result']}}" == "high"){
+          $("#output").html("<h1>Too High!</h1>")
+        }else if ("{{session['result']}}" == "correct"){
+          $("#output").css("background-color","green")
+          $("#output").html("<h1>{{session['rannum']}} was the number!</h1>\
+          <form method='post'>\
+          <input type='hidden' name='action' value='reset'>\
+          <input type='submit' value='Play Again!'>\
+          </form>")
+          $("#guess").html("")
+        }else if ("{{session['result']}}" == ""){
+          $("#output").css("padding","0")
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <h1>The Great Number Game</h1>
+    <h2>I'm thinking of a number between 1 and 100, try and guess it!</h2>
+    <div id="output"></div>
+    <form id="guess" method="post">
+      <input type="hidden" name="action" value="guess">
+      <input type="text" name="guess">
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

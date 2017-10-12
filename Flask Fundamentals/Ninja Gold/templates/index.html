@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h2>Your Gold: {{session['gold']}}</h2>
+    <form action="/process_money" method="post">
+      <h3>Farm</h3>
+      <p>(earns 10-20 gold)</p>
+      <input type="hidden" name="action" value="farm">
+      <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money" method="post">
+      <h3>Cave</h3>
+      <p>(earns 5-10 gold)</p>
+      <input type="hidden" name="action" value="cave">
+      <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money" method="post">
+      <h3>House</h3>
+      <p>(earns 2-5 gold)</p>
+      <input type="hidden" name="action" value="house">
+      <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money" method="post">
+      <h3>Casino</h3>
+      <p>(earns/takes 0-50 gold)</p>
+      <input type="hidden" name="action" value="casino">
+      <input type="submit" value="Find Gold!">
+    </form>
+    <div id="activities">
+      {% for element in session['history'] %}
+        <p class="{{element['type']}}">{{element['result']}}</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>

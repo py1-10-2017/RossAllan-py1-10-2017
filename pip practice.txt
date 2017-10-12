@@ -1,0 +1,8 @@
+1. (pip install Django) this returned a series of progress bars as it installed the requested service, explaining what is was installing, followed by a success message.
+2. (pip list) this returned the installed packages and their version.
+3. (pip install Django) returned "Requirement already satisfied", meaning it knows the package is already installed.
+4. (pip freeze) this returns a similar list to (pip list), however the versions are shown as evaluated to be equal to  the packages, "=="
+5. (pip freeze > requirements.txt, dir requirements.txt) The file is shown to be 127 bytes. The file contains the output of (pip freeze), much as would be expected.
+6. (pip uninstall Django) This uninstalled Django after a prompt.
+7. (pip show Django) this returned nothing, likely because Django is no longer installed.
+8. (pip search Flask) this returned a massive list in two columns, which appear to be plug-ins and descriptions. Given the descriptions and the beta/alpha versions tags, these are likely 3rd party plug-ins.
