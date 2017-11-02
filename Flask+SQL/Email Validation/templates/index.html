@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emails</title>
+  </head>
+  <body>
+    {% with errors = get_flashed_messages() %}
+      {% if errors %}
+        {% for message in errors %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form action="process" method="post">
+      <input type="text" name="email">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

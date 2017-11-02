@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+  </head>
+  <body>
+    <div id="topbanner">
+      <h1>The Wall</h1>
+      <form action="logout" method="post">
+        You're logged in as: {{username}}<br>
+        Not you? <input type="submit" value="Log Out" id="logout">
+      </form>
+    </div>
+      <form action="" method="post" id="postform">
+        <h2>Post a message:</h2>
+        <textarea class="postbox" name="postmsg"></textarea>
+        <input type="submit" value="Post" class="postbtn">
+      </form>
+      {% for element in all_messages %}
+        <div class="message" id="message{{element['id']}}">
+          <h3>{{element['username']}} - {{element['created']}}</h3>
+          <p>{{element['message']}}</p>
+          {% for element in all_comments[element['id']] %}
+            <div class="comment">
+              <h4>{{element['username']}} - {{element['created']}}</h4>
+              <p>{{element['comment']}}</p>
+            </div>
+          {% endfor %}
+          <form action="{{element['id']}}" method="post">
+            <textarea class="commentbox" name="postcmt"></textarea>
+            <input type="submit" value="Comment" class="cmtbtn">
+          </form>
+        </div>
+      {% endfor %}
+  </body>
+</html>

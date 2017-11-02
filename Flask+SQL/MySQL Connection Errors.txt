@@ -1,0 +1,8 @@
+1045, "Access denied for user 'ODBC'@'localhost' (using password: YES)"
+//: No user set
+1045, "Access denied for user 'root'@'localhost' (using password: NO)"
+//: No password set
+1045, "Access denied for user 'root'@'localhost' (using password: YES)"
+//: Wrong password
+2003, "Can't connect to MySQL server on '127.0.0.1' (10061)"
+//: Wrong port

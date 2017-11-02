@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emails</title>
+  </head>
+  <body>
+    {% for email in all_emails %}
+      <p style="display:inline-block">{{email['user']}}@{{email['domain']}} ------ {{email['created_at']}}</p>
+      <form style="display:inline-block" action="delete/{{email['id']}}" method="post">
+        <input style="display:inline-block" type="submit" value="Delete">
+      </form>
+      <hr>
+    {% endfor %}
+    <form action="process" method="post">
+      <input type="text" name="email">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>

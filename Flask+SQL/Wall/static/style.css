@@ -1,0 +1,84 @@
+*{
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+
+#topbanner{
+  border-bottom: 2px solid black;
+  margin: 0;
+}
+
+#topbanner h1{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#topbanner form{
+  display: inline-block;
+  float: right;
+}
+
+#logout{
+  background-color: #960000;
+  color: white;
+  border: none;
+  padding: 5px;
+  box-shadow: 2px 2px black;
+}
+
+.postbox{
+  resize: none;
+  height: 75px;
+  width: 600px;
+}
+
+.commentbox{
+  resize: none;
+  height: 50px;
+  width: 400px;
+  margin-left: 30px;
+}
+
+.comment{
+  margin-left: 30px;
+}
+
+div{
+  margin-top: 10px;
+}
+
+#postform{
+  margin-top: 20px;
+}
+
+.postbtn{
+  position: relative;
+  bottom: 10px;
+  padding: 5px;
+  border: none;
+  background-color: blue;
+  color: white;
+  box-shadow: 2px 2px black;
+}
+
+.cmtbtn{
+  position: relative;
+  bottom: 10px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  box-shadow: 2px 2px black;
+  border: none;
+}
+
+.login{
+  display: inline-block;
+  padding: 10px;
+  margin-right: 50px;
+  border: 2px solid black;
+  box-shadow: 3px 3px #4e4e4e;
+  vertical-align: top;
+}
+.login input{
+  display: block;
+}
